@@ -1,4 +1,20 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+
+<table *ngIf="isDisplay">
+  <thead>
+    <td>Name</td>
+    <td>price</td>
+    <td>qty</td>
+    <td>Total price</td>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.name }}</td>
+      <td>{{ order.price }}</td>
+      <td>{{ order.qty }}</td>
+      <td>{{ getTotalPrice( order.price  , order.qty }}</td>
+    </tr>
+  </tbody>
+</table>
